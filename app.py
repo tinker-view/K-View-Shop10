@@ -15,7 +15,7 @@ import calendar as py_calendar
 
 
 
-st.set_page_config(page_title="K-View", layout="wide")
+st.set_page_config(page_title="Hi-View", layout="wide")
 
 
 
@@ -89,7 +89,7 @@ if "authenticated" not in st.session_state:
 
 # 💡 미인증 상태일 때 로그인 폼 출력 ㅋ
 if not st.session_state.authenticated:
-    st.title("🔐 K-View 멤버 접속")
+    st.title("🔐Hi-Vieww 멤버 접속")
     df_users = load_data("users")
     with st.form("login"):
         u, p = st.text_input("ID"), st.text_input("PW", type="password")
@@ -284,7 +284,7 @@ def get_stock_val(item_name):
     except: return "!"
 
 
-st.markdown(f'<style>[data-testid="stHeader"], header {{ visibility: hidden !important; height: 0 !important; }} .top-bar {{ display: flex; justify-content: space-between; align-items: center; margin-top: -45px; margin-bottom: 15px; }} .main-title {{ font-size: 22px !important; font-weight: 800 !important; color: #1E3A8A; }} .user-info {{ font-size: 14px; color: #6b7280; font-weight: 500; }} .stock-badge {{ font-size: 13px !important; font-weight: 700 !important; color: white; background: #ef4444; padding: 5px 12px; border-radius: 20px; }}</style><div class="top-bar"><div class="main-title">✨ K-View <span class="user-info">({st.session_state.user_name} 님)</span></div><div class="stock-badge">📦 HP: {get_stock_val("HP")} | S3: {get_stock_val("S3")}</div></div>', unsafe_allow_html=True)
+st.markdown(f'<style>[data-testid="stHeader"], header {{ visibility: hidden !important; height: 0 !important; }} .top-bar {{ display: flex; justify-content: space-between; align-items: center; margin-top: -45px; margin-bottom: 15px; }} .main-title {{ font-size: 22px !important; font-weight: 800 !important; color: #1E3A8A; }} .user-info {{ font-size: 14px; color: #6b7280; font-weight: 500; }} .stock-badge {{ font-size: 13px !important; font-weight: 700 !important; color: white; background: #ef4444; padding: 5px 12px; border-radius: 20px; }}</style><div class="top-bar"><div class="main-title">✨ Hi-View <span class="user-info">({st.session_state.user_name} 님)</span></div><div class="stock-badge">📦 HP: {get_stock_val("HP")} | S3: {get_stock_val("S3")}</div></div>', unsafe_allow_html=True)
 
 
 
@@ -537,7 +537,7 @@ with tabs[3]:
             st.download_button(
                 label="📁 [Excel] 회원정보 & 매출내역 통합본 다운로드",
                 data=processed_data,
-                file_name=f"K-View_통합데이터_{datetime.now().strftime('%Y%m%d')}.xlsx",
+                file_name=f"Hi-View_통합데이터_{datetime.now().strftime('%Y%m%d')}.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 use_container_width=True,
                 key="btn_excel_download_final"
